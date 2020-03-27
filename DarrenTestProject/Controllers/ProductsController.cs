@@ -31,6 +31,7 @@ namespace DarrenTestProject.Controllers
 
         // GET/VIEW: api/Products
         [Route("")]
+        [Route("~/prods")]
         [AcceptVerbs("GET", "VIEW")]
         public IEnumerable<string> SweetReturnAllTheProducts()
         {
