@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using Newtonsoft.Json.Converters;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net;
@@ -10,6 +12,23 @@ namespace DarrenTestProject.Controllers
     [RoutePrefix("products")]
     public class ProductsController : ApiController
     {
+
+        [JsonConverter(typeof(StringEnumConverter))]
+        public enum Widgets
+        {
+            Bolt,
+            Screw,
+            Nut,
+            Motor
+        };
+
+        // GET: Products/widget/xxx
+        [HttpGet, Route("widget/{widget:enum(DarrenTestProject.Controllers.ProductsController+Widgets)}")]
+        public string GetProductsWithWidget(Widgets widget)
+        {
+            return "widget-" + widget.ToString();
+        }
+
         // GET: api/Products
         [HttpGet, Route("")]
         public IEnumerable<string> SweetReturnAllTheProducts()

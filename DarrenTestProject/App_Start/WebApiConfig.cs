@@ -1,7 +1,9 @@
-﻿using System;
+﻿using DeLoachAero.WebApi;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web.Http;
+using System.Web.Http.Routing;
 
 namespace DarrenTestProject
 {
@@ -12,7 +14,10 @@ namespace DarrenTestProject
             // Web API configuration and services
 
             // Web API routes
-            config.MapHttpAttributeRoutes();
+            // Web API routes
+            var constraintResolver = new DefaultInlineConstraintResolver();
+            constraintResolver.ConstraintMap.Add("enum", typeof(EnumerationConstraint));
+            config.MapHttpAttributeRoutes(constraintResolver);
 
             //config.Routes.MapHttpRoute(
             //    name: "DefaultApi",
