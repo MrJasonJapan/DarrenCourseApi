@@ -39,7 +39,7 @@ namespace DarrenTestProject.Controllers
         }
 
         // GET: api/Products/5
-        [HttpGet, Route("{id:int:range(1000,3000)}")]
+        [HttpGet, Route("{id:int:range(1000,3000)}", Name = "GetById")]
         public string Get(int id)
         {
             return "product";
@@ -56,6 +56,20 @@ namespace DarrenTestProject.Controllers
         [HttpPost, Route("")]
         public void CreateProduct([FromBody]string value)
         {
+        }
+
+        // POST: api/Products
+        [HttpPost, Route("{prodId:int:range(1000,3000)}")]
+        public HttpResponseMessage CreateProduct([FromUri]int prodId)
+        {
+            // do some login, then...
+
+            var response = Request.CreateResponse(HttpStatusCode.Created);
+
+            // create the self-referencing link to the new item and set response location header
+            string uri = Url.Link("GetById", new { id = prodId });
+            response.Headers.Location = new Uri(uri);
+            return response;
         }
 
         // PUT: api/Products/5
