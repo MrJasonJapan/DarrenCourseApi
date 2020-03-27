@@ -29,8 +29,9 @@ namespace DarrenTestProject.Controllers
             return "widget-" + widget.ToString();
         }
 
-        // GET: api/Products
-        [HttpGet, Route("")]
+        // GET/VIEW: api/Products
+        [Route("")]
+        [AcceptVerbs("GET", "VIEW")]
         public IEnumerable<string> SweetReturnAllTheProducts()
         {
             return new string[] { "product1", "product2" };
