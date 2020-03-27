@@ -7,32 +7,45 @@ using System.Web.Http;
 
 namespace DarrenTestProject.Controllers
 {
+    [RoutePrefix("products")]
     public class ProductsController : ApiController
     {
         // GET: api/Products
-        public IEnumerable<string> GetAllProducts()
+        [HttpGet, Route("")]
+        public IEnumerable<string> SweetReturnAllTheProducts()
         {
             return new string[] { "product1", "product2" };
         }
 
         // GET: api/Products/5
+        [HttpGet, Route("{id}")]
         public string Get(int id)
         {
             return "product";
         }
 
+        // GET: api/Products/5/orders/custid
+        [HttpGet, Route("{id}/orders/{custid}")]
+        public string Get(int id, string custid)
+        {
+            return "product-orders" + custid;
+        }
+
+
         // POST: api/Products
-        [HttpPost]
+        [HttpPost, Route("")]
         public void CreateProduct([FromBody]string value)
         {
         }
 
         // PUT: api/Products/5
+        [HttpPut, Route("{id}")]
         public void Put(int id, [FromBody]string value)
         {
         }
 
         // DELETE: api/Products/5
+        [HttpDelete, Route("{id}")]
         public void Delete(int id)
         {
         }
