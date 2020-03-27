@@ -18,7 +18,7 @@ namespace DarrenTestProject.Controllers
         }
 
         // GET: api/Products/5
-        [HttpGet, Route("{id}")]
+        [HttpGet, Route("{id:int:range(1000,3000)}")]
         public string Get(int id)
         {
             return "product";
@@ -31,7 +31,6 @@ namespace DarrenTestProject.Controllers
             return "product-orders" + custid;
         }
 
-
         // POST: api/Products
         [HttpPost, Route("")]
         public void CreateProduct([FromBody]string value)
@@ -39,13 +38,13 @@ namespace DarrenTestProject.Controllers
         }
 
         // PUT: api/Products/5
-        [HttpPut, Route("{id}")]
+        [HttpPut, Route("{id:int:range(1000,3000)}")]
         public void Put(int id, [FromBody]string value)
         {
         }
 
         // DELETE: api/Products/5
-        [HttpDelete, Route("{id}")]
+        [HttpDelete, Route("{id:int:range(1000,3000)}")]
         public void Delete(int id)
         {
         }
