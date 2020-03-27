@@ -38,8 +38,8 @@ namespace DarrenTestProject.Controllers
             return new string[] { "product1", "product2" };
         }
 
-        [HttpGet, Route("status/{status:alpha=pending}/{id:int=5}")]
-        public string GetProductsWithStatus(string status, int id)
+        [HttpGet, Route("status/{status:alpha=}")]
+        public string GetProductsWithStatus(string status)
         {
             return String.IsNullOrEmpty(status) ? "NULL" : status;
         }
