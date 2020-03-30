@@ -20,6 +20,7 @@ namespace DarrenTestProject
             // We don't need this, cause all the headers we want to remove, can be accomplished with
             // settings changes inside the web.config
             // config.MessageHandlers.Add(new RemoveBadHeadersHandler());
+            config.MessageHandlers.Add(new MethodOverrideWithViewHandler());
 
             // Web API routes
             // Web API routes
