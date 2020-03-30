@@ -24,7 +24,8 @@ namespace DarrenTestProject.Controllers
             {
                 getValueByIdUrl,
                 Request.GetSelfReferenceBaseUrl().ToString(),
-                Request.RebaseUrlForClient(new Uri(getValueByIdUrl)).ToString()
+                Request.RebaseUrlForClient(new Uri(getValueByIdUrl)).ToString(),
+                Request.GetClientIpAddress()
             };
         }
 

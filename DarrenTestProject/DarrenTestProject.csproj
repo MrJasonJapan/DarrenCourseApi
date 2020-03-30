@@ -116,6 +116,7 @@
     <Compile Include="Handlers\DelegatingHandlerTemplate.cs" />
     <Compile Include="Handlers\ForwardedHeadersHandler.cs" />
     <Compile Include="Handlers\FullPipelineTimerHandler.cs" />
+    <Compile Include="Handlers\ClientIpAddressHandler.cs" />
     <Compile Include="Handlers\MethodOverrideWithViewHandler.cs" />
     <Compile Include="Handlers\RemoveBadHeadersHandler.cs" />
     <Compile Include="Models\Base64ModelBinder.cs" />

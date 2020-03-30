@@ -22,6 +22,7 @@ namespace DarrenTestProject
             // config.MessageHandlers.Add(new RemoveBadHeadersHandler());
             config.MessageHandlers.Add(new MethodOverrideWithViewHandler());
             config.MessageHandlers.Add(new ForwardedHeadersHandler());
+            config.MessageHandlers.Add(new ClientIpAddressHandler());
             
 
             // Web API routes

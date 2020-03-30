@@ -23,14 +23,13 @@
 					}
 				],
 				"url": {
-					"raw": "https://localhost:44373/api/Values",
+					"raw": "https://localhost:44373/Values",
 					"protocol": "https",
 					"host": [
 						"localhost"
 					],
 					"port": "44373",
 					"path": [
-						"api",
 						"Values"
 					]
 				}
@@ -66,14 +65,72 @@
 					}
 				],
 				"url": {
-					"raw": "https://localhost:44373/api/Values",
+					"raw": "https://localhost:44373/Values",
 					"protocol": "https",
 					"host": [
 						"localhost"
 					],
 					"port": "44373",
 					"path": [
-						"api",
+						"Values"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Values (LB Perspective)  w IP too",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"type": "text",
+						"value": "application/xml",
+						"disabled": true
+					},
+					{
+						"key": "x-api-key",
+						"type": "text",
+						"value": "test",
+						"disabled": true
+					},
+					{
+						"key": "X-Forwarded-Host",
+						"type": "text",
+						"value": "mycompany.com:1234"
+					},
+					{
+						"key": "X-Forwared-Proto",
+						"type": "text",
+						"value": "https"
+					},
+					{
+						"key": "X-Forwarded-For",
+						"value": "192.168.1.1",
+						"type": "text"
+					},
+					{
+						"key": "X-Forwarded-For",
+						"value": "192.168.1.2,10.0.0.2",
+						"type": "text",
+						"disabled": true
+					},
+					{
+						"key": "Forwarded",
+						"value": "by=10.0.0.3;for=192.168.1.3;host=mycompany.com",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"url": {
+					"raw": "https://localhost:44373/Values",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44373",
+					"path": [
 						"Values"
 					]
 				}
@@ -191,26 +248,30 @@
 				"header": [
 					{
 						"key": "Accept",
-						"value": "application/xml",
 						"type": "text",
+						"value": "application/xml",
 						"disabled": true
 					},
 					{
 						"key": "x-api-key",
+						"type": "text",
 						"value": "test",
-						"type": "text"
+						"disabled": true
 					}
 				],
 				"url": {
-					"raw": "https://localhost:44373/api/Values",
+					"raw": "https://localhost:44373/segments/test1/test2/test3/test4",
 					"protocol": "https",
 					"host": [
 						"localhost"
 					],
 					"port": "44373",
 					"path": [
-						"api",
-						"Values"
+						"segments",
+						"test1",
+						"test2",
+						"test3",
+						"test4"
 					]
 				}
 			},
