@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web.Http;
 using System.Web.Http.Routing;
+using DarrenTestProject.Models;
 
 namespace DarrenTestProject
 {
@@ -17,6 +18,7 @@ namespace DarrenTestProject
             // Web API routes
             var constraintResolver = new DefaultInlineConstraintResolver();
             constraintResolver.ConstraintMap.Add("enum", typeof(EnumerationConstraint));
+            constraintResolver.ConstraintMap.Add("base64", typeof(Base64Constraint));
             config.MapHttpAttributeRoutes(constraintResolver);
 
             //config.Routes.MapHttpRoute(
