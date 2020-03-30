@@ -28,6 +28,7 @@ namespace DarrenTestProject.Handlers
             //          is sent on to the action method
             string apikey = null;
 
+            // Notice we don't need this, as this reposonsibility should be at the Authenication filter.
             //if (request.RequestUri.Segments[1].ToLowerInvariant().StartsWith("swagger"))
             //    return base.SendAsync(request, cancellationToken);
 
@@ -44,6 +45,7 @@ namespace DarrenTestProject.Handlers
                     apikey = kvp.Value;
             }
 
+            // Notice we don't need this, as this reposonsibility should be at the Authenication filter.
             // was any api key present?  If none, abort request
             //if (string.IsNullOrEmpty(apikey))
             //{
@@ -66,6 +68,8 @@ namespace DarrenTestProject.Handlers
 
     /// <summary>
     /// http request extension for retrieving api key if present
+    /// This method is nice because the caller doesn't need to know specifics about where the apiKey in the request.Properties.
+    /// The caller could really be from anywhere in the pipeline (anywhere in the code that has access to the request object).
     /// </summary>
     public static class HttpRequestMessageApiKeyExtension
     {

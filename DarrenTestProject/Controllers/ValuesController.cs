@@ -6,6 +6,7 @@ using System.Net.Http;
 using System.Web.Http;
 using System.Web.Http.Description;
 using System.Web.Http.ModelBinding;
+using DarrenTestProject.Handlers;
 using DarrenTestProject.Models;
 
 namespace DarrenTestProject.Controllers
@@ -16,7 +17,7 @@ namespace DarrenTestProject.Controllers
         [HttpGet, Route("values")]
         public IEnumerable<string> Get()
         {
-            return new string[] { "value1", "value2" };
+            return new string[] { "value1", "value2", Request.GetApiKey() };
         }
 
         // GET: api/Values/5

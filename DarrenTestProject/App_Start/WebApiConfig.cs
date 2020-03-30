@@ -16,6 +16,7 @@ namespace DarrenTestProject
             // Web API configuration and services
             // register our Delegating Handlers
             config.MessageHandlers.Add(new FullPipelineTimerHandler());
+            config.MessageHandlers.Add(new ApiKeyHeaderHandler());
 
             // Web API routes
             // Web API routes
