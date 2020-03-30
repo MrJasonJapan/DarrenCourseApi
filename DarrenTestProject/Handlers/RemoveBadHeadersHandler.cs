@@ -28,7 +28,8 @@ namespace DarrenTestProject.Handlers
             foreach (var h in _badHeaders)
             {
                 response.Headers.Remove(h);
-                response.Headers.Add(h, "NA");
+                // Overwrite the header to something else, something that won't help an attacker.
+                // response.Headers.Add(h, "NA");
             }
 
             // STEP 4:  Return the final HTTP response
