@@ -8,13 +8,15 @@ using System.Web.Http.Description;
 using System.Web.Http.ModelBinding;
 using DarrenTestProject.Handlers;
 using DarrenTestProject.Models;
+using HandlerTemplates.Filters;
 
 namespace DarrenTestProject.Controllers
 {
+    [RoutePrefix("values")]
     public class ValuesController : ApiController
     {
         // GET: api/Values
-        [HttpGet, Route("values")]
+        [HttpGet, Route("")]
         public IEnumerable<string> Get()
         {
             var getValueByIdUrl = Url.Link("GetValueById", new { id = 123 });

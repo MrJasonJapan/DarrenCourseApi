@@ -97,6 +97,7 @@
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Constraints\ParameterConstraintTemplate.cs" />
     <Compile Include="Constraints\RegexBasedConstraintTemplate.cs" />
+    <Compile Include="Controllers\MoreValuesController.cs" />
     <Compile Include="Controllers\OrdersController.cs" />
     <Compile Include="Controllers\ProductsController.cs" />
     <Compile Include="Controllers\ValuesController.cs" />
@@ -109,6 +110,8 @@
     <Compile Include="Filters\AuthenticationFailureResult.cs" />
     <Compile Include="Filters\AuthenticationFilterTemplate.cs" />
     <Compile Include="Filters\AuthorizationFilterTemplate.cs" />
+    <Compile Include="Filters\ClientCacheControlFilter.cs" />
+    <Compile Include="Filters\RouteTimerFilter.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>

@@ -6,6 +6,7 @@ using System.Web.Http;
 using System.Web.Http.Routing;
 using DarrenTestProject.Models;
 using DarrenTestProject.Handlers;
+using HandlerTemplates.Filters;
 
 namespace DarrenTestProject
 {
@@ -23,6 +24,9 @@ namespace DarrenTestProject
             config.MessageHandlers.Add(new MethodOverrideWithViewHandler());
             config.MessageHandlers.Add(new ForwardedHeadersHandler());
             config.MessageHandlers.Add(new ClientIpAddressHandler());
+
+            // Global Filter
+            config.Filters.Add(new RouteTimerFilterAttribute("Global"));
             
 
             // Web API routes
