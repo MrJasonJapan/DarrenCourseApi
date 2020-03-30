@@ -12,13 +12,13 @@ namespace DarrenTestProject.Handlers
     public class ForwardedHeadersHandler : DelegatingHandler
     {
         // new style header:   "Forwarded: by=<identifier>; for=<identifier>; host=<host>; proto=<http|https>"  
-        //https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Forwarded
+        // https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Forwarded
         const string _fwdHeader = "Forwarded";
 
         // old style, separate headers
-        //https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-Forwarded-Proto
+        // https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-Forwarded-Proto
         const string _fwdProtoHeader = "X-Forwarded-Proto";
-        //https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-Forwarded-Host
+        // https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-Forwarded-Host
         const string _fwdHostHeader = "X-Forwarded-Host";
 
         /// <summary>
@@ -28,6 +28,7 @@ namespace DarrenTestProject.Handlers
         public const string MyClientBaseUrlProperty = "MyClientBaseUrl";
 
         /// <summary>
+        /// LOOK HERE
         /// This handler processes both old and new-style Forwarded headers
         /// to calculate the "self-referencing" base URL from 
         /// the client's perspective, i.e. the url the client used to call
@@ -122,6 +123,7 @@ namespace DarrenTestProject.Handlers
     public static class HttpRequestMessageBaseUrlExtension
     {
         /// <summary>
+        /// LOOK HERE                
         /// Retrieves the base URL to use in order to create a "self-referencing URL", a URL
         /// that points at this web service but from the client's perspective, taking into
         /// account any load balancers in use in front of the service.
@@ -152,6 +154,7 @@ namespace DarrenTestProject.Handlers
         }
 
         /// <summary>
+        /// LOOK HERE
         /// Retrieves a URL re-based from the client's perspective, taking into
         /// account any load balancers in use in front of the service, given a server-base URL.
         /// </summary>

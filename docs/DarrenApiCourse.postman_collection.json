@@ -1,0 +1,312 @@
+{
+	"info": {
+		"_postman_id": "ff4c0e7a-714d-4ad0-9073-90cc97fead1e",
+		"name": "API - DarrenApiCourse",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Get Values",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/xml",
+						"type": "text",
+						"disabled": true
+					},
+					{
+						"key": "x-api-key",
+						"value": "test",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://localhost:44373/api/Values",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44373",
+					"path": [
+						"api",
+						"Values"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Values (LB Perspective)",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"type": "text",
+						"value": "application/xml",
+						"disabled": true
+					},
+					{
+						"key": "x-api-key",
+						"type": "text",
+						"value": "test",
+						"disabled": true
+					},
+					{
+						"key": "X-Forwarded-Host",
+						"value": "mycompany.com:1234",
+						"type": "text"
+					},
+					{
+						"key": "X-Forwared-Proto",
+						"value": "https",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://localhost:44373/api/Values",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44373",
+					"path": [
+						"api",
+						"Values"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "View Products",
+			"request": {
+				"method": "VIEW",
+				"header": [
+					{
+						"key": "Accept",
+						"type": "text",
+						"value": "application/xml",
+						"disabled": true
+					},
+					{
+						"key": "x-api-key",
+						"type": "text",
+						"value": "test"
+					}
+				],
+				"url": {
+					"raw": "https://localhost:44373/products",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44373",
+					"path": [
+						"products"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Products status",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"type": "text",
+						"value": "application/xml",
+						"disabled": true
+					},
+					{
+						"key": "x-api-key",
+						"type": "text",
+						"value": "test"
+					}
+				],
+				"url": {
+					"raw": "https://localhost:44373/products/status",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44373",
+					"path": [
+						"products",
+						"status"
+					],
+					"query": [
+						{
+							"key": "status",
+							"value": "test",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Dates",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"type": "text",
+						"value": "application/xml",
+						"disabled": true
+					},
+					{
+						"key": "x-api-key",
+						"type": "text",
+						"value": "test"
+					}
+				],
+				"url": {
+					"raw": "https://localhost:44373/dates/2020/03/20",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44373",
+					"path": [
+						"dates",
+						"2020",
+						"03",
+						"20"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Segements",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/xml",
+						"type": "text",
+						"disabled": true
+					},
+					{
+						"key": "x-api-key",
+						"value": "test",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://localhost:44373/api/Values",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44373",
+					"path": [
+						"api",
+						"Values"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Binary",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"type": "text",
+						"value": "application/xml",
+						"disabled": true
+					},
+					{
+						"key": "x-api-key",
+						"type": "text",
+						"value": "test"
+					}
+				],
+				"url": {
+					"raw": "https://localhost:44373/binary/ew0KICAibnVtYmVyIjogMTIzLA0KICAib2JqZWN0Ijogew0KICAgICJhIjogImIiLA0KICAgICJjIjogImQiLA0KICAgICJlIjogImYiDQogIH0sDQogICJzdHJpbmciOiAiSGVsbG8gV29ybGQiDQp9",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44373",
+					"path": [
+						"binary",
+						"ew0KICAibnVtYmVyIjogMTIzLA0KICAib2JqZWN0Ijogew0KICAgICJhIjogImIiLA0KICAgICJjIjogImQiLA0KICAgICJlIjogImYiDQogIH0sDQogICJzdHJpbmciOiAiSGVsbG8gV29ybGQiDQp9"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Switch Method",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"type": "text",
+						"value": "application/xml",
+						"disabled": true
+					},
+					{
+						"key": "x-api-key",
+						"type": "text",
+						"value": "test",
+						"disabled": true
+					},
+					{
+						"key": "X-HTTP-Method-Override",
+						"value": "VIEW",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://localhost:44373/products",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44373",
+					"path": [
+						"products"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "b92c593e-a7a0-4cbb-9cd2-0f9d37772661",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "667adc4f-1f5f-4037-bb38-96d6bd3be078",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"protocolProfileBehavior": {}
+}

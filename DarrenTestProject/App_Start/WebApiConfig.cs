@@ -21,6 +21,8 @@ namespace DarrenTestProject
             // settings changes inside the web.config
             // config.MessageHandlers.Add(new RemoveBadHeadersHandler());
             config.MessageHandlers.Add(new MethodOverrideWithViewHandler());
+            config.MessageHandlers.Add(new ForwardedHeadersHandler());
+            
 
             // Web API routes
             // Web API routes

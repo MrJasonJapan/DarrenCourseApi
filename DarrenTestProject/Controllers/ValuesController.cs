@@ -17,10 +17,19 @@ namespace DarrenTestProject.Controllers
         [HttpGet, Route("values")]
         public IEnumerable<string> Get()
         {
-            return new string[] { "value1", "value2", Request.GetApiKey() };
+            var getValueByIdUrl = Url.Link("GetValueById", new { id = 123 });
+
+            //return new string[] { "value1", "value2", Request.GetApiKey() };
+            return new String[]
+            {
+                getValueByIdUrl,
+                Request.GetSelfReferenceBaseUrl().ToString(),
+                Request.RebaseUrlForClient(new Uri(getValueByIdUrl)).ToString()
+            };
         }
 
         // GET: api/Values/5
+        [HttpGet, Route("{id:int}", Name = "GetValueById")]
         public string Get(int id)
         {
             return "value";
