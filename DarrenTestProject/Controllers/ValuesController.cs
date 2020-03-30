@@ -55,7 +55,7 @@ namespace DarrenTestProject.Controllers
             return Json(obj);
         }
 
-        [HttpPut, Route("bodytest")]
+        [HttpPut, Route("bodytest")]    
         public string BodyTest([FromBody] string value)
         {
             return value;

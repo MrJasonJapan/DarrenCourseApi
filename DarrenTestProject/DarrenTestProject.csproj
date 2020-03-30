@@ -95,13 +95,28 @@
   <ItemGroup>
     <Compile Include="App_Start\SwaggerConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Constraints\ParameterConstraintTemplate.cs" />
+    <Compile Include="Constraints\RegexBasedConstraintTemplate.cs" />
     <Compile Include="Controllers\OrdersController.cs" />
     <Compile Include="Controllers\ProductsController.cs" />
     <Compile Include="Controllers\ValuesController.cs" />
     <Compile Include="EnumerationConstraint.cs" />
+    <Compile Include="ExceptionHandlers\ExceptionFilterTemplate.cs" />
+    <Compile Include="ExceptionHandlers\GlobalExceptionHandlerTemplate.cs" />
+    <Compile Include="ExceptionHandlers\GlobalExceptionLoggerTemplate.cs" />
+    <Compile Include="Filters\ActionFilterTemplate.cs" />
+    <Compile Include="Filters\AddChallengeOnUnauthorizedResult.cs" />
+    <Compile Include="Filters\AuthenticationFailureResult.cs" />
+    <Compile Include="Filters\AuthenticationFilterTemplate.cs" />
+    <Compile Include="Filters\AuthorizationFilterTemplate.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Handlers\ApiKeyHeaderHandler.cs" />
+    <Compile Include="Handlers\DelegatingHandlerTemplate.cs" />
+    <Compile Include="Handlers\ForwardedHeadersHandler.cs" />
+    <Compile Include="Handlers\FullPipelineTimerHandler.cs" />
+    <Compile Include="Handlers\RemoveBadHeadersHandler.cs" />
     <Compile Include="Models\Base64ModelBinder.cs" />
     <Compile Include="Models\ComplexTypeDto.cs" />
     <Compile Include="Models\StringArrayWildcardBinder.cs" />
