@@ -12,22 +12,22 @@ namespace DarrenTestProject.Controllers
     [RoutePrefix("moreValues")]
     public class MoreValuesController : ApiController
     {
-        [HttpGet, Route("")]
-        [RouteTimerFilter("GetAllValues")]
-        public IEnumerable<string> Get()
-        {
-            Trace.WriteLine(DateTime.Now.ToLongTimeString() + "  Get called");
-            return new string[] { "value1", "value2" };
-        }
-
-        // GET api/<controller>
         //[HttpGet, Route("")]
-        //[ClientCacheControlFilter(ClientCacheControl.Private, 10)]
+        //[RouteTimerFilter("GetAllValues")]
         //public IEnumerable<string> Get()
         //{
         //    Trace.WriteLine(DateTime.Now.ToLongTimeString() + "  Get called");
         //    return new string[] { "value1", "value2" };
         //}
+
+        // GET api/<controller>
+        [HttpGet, Route("")]
+        [ClientCacheControlFilter(ClientCacheControl.Private, 10)]
+        public IEnumerable<string> Get()
+        {
+            Trace.WriteLine(DateTime.Now.ToLongTimeString() + "  Get called");
+            return new string[] { "value1", "value2" };
+        }
 
         // GET api/<controller>/5
         [HttpGet, Route("{id:int}")]
