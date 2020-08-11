@@ -26,13 +26,17 @@ namespace DarrenTestProject
             // config.MessageHandlers.Add(new RemoveBadHeadersHandler());
             config.MessageHandlers.Add(new MethodOverrideWithViewHandler());
             config.MessageHandlers.Add(new ForwardedHeadersHandler());
+
+            config.Filters.Add(new BasicAuthFilterAttribute());
+            // config.Filters.Add(new JwtAuthenticationFilterAttribute());
+            config.Filters.Add(new AuthorizeAttribute());
+
             config.MessageHandlers.Add(new ClientIpAddressHandler());
 
             // Global Filter
             config.Filters.Add(new RouteTimerFilterAttribute("Global"));
-            
 
-            // Web API routes
+
             // Web API routes
             var constraintResolver = new DefaultInlineConstraintResolver();
             constraintResolver.ConstraintMap.Add("enum", typeof(EnumerationConstraint));

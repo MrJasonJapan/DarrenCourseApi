@@ -17,18 +17,21 @@ namespace DarrenTestProject.Controllers
     {
         // GET: api/Values
         [HttpGet, Route("")]
+        [Authorize] // -> was a proper IPrincipal set?
         public IEnumerable<string> Get()
         {
-            var getValueByIdUrl = Url.Link("GetValueById", new { id = 123 });
+            //var getValueByIdUrl = Url.Link("GetValueById", new { id = 123 });
 
-            //return new string[] { "value1", "value2", Request.GetApiKey() };
-            return new String[]
-            {
-                getValueByIdUrl,
-                Request.GetSelfReferenceBaseUrl().ToString(),
-                Request.RebaseUrlForClient(new Uri(getValueByIdUrl)).ToString(),
-                Request.GetClientIpAddress()
-            };
+            ////return new string[] { "value1", "value2", Request.GetApiKey() };
+            //return new String[]
+            //{
+            //    getValueByIdUrl,
+            //    Request.GetSelfReferenceBaseUrl().ToString(),
+            //    Request.RebaseUrlForClient(new Uri(getValueByIdUrl)).ToString(),
+            //    Request.GetClientIpAddress()
+            //};
+
+            return new string[] { User.Identity.Name, User.Identity.AuthenticationType };
         }
 
         // GET: api/Values/5
