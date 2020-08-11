@@ -87,25 +87,27 @@ namespace DarrenTestProject.Controllers
         /// <summary>
         /// Returns an IHttpActionResult
         /// </summary>
-        //[HttpGet, Route("actionresult")]
-        //[ResponseType(typeof(ComplexTypeDto))]
-        //[SwaggerResponse(HttpStatusCode.OK, Type = typeof(ComplexTypeDto))]
-        //public IHttpActionResult GetAnActionResult()
-        //{
-        //    var dto = new ComplexTypeDto()
-        //    {
-        //        String1 = "This is string 1",
-        //        String2 = "This is string 2",
-        //        Int1 = 55,
-        //        Date1 = DateTime.Now
-        //    };
+        [HttpGet, Route("actionresult")]
+        [ResponseType(typeof(ComplexTypeDto))]
+        [SwaggerResponse(HttpStatusCode.OK, Type = typeof(ComplexTypeDto))]
+        public IHttpActionResult GetAnActionResult()
+        {
+            var dto = new ComplexTypeDto()
+            {
+                String1 = "This is string 1",
+                String2 = "This is string 2",
+                Int1 = 55,
+                Date1 = DateTime.Now
+            };
 
-        //    //var response = Json(dto);
-        //    var response = Ok(dto).AddHeader("X-MyCustomHeader", "test value");
-            
-        //    //var response = BadRequest("test test test").AddHeader("X-MyCustomHeader", "test value"); 
+            //var response = Json(dto);
+            var response = Ok(dto).AddHeader("X-MyCustomHeader", "test value");
+            // For a cool affluent-syntax chaining of cachability [.Cached()], see this: https://gist.github.com/bradwilson/8586562
+            // return Ok("Hello, " + name).Cached(Cacheability.Public, maxAge: TimeSpan.FromMinutes(15));
 
-        //    return response;
-        //}
+            //var response = BadRequest("test test test").AddHeader("X-MyCustomHeader", "test value"); 
+
+            return response;
+        }
     }
 }
