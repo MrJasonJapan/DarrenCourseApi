@@ -93,6 +93,7 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ActionResults\AddHeaderResult.cs" />
     <Compile Include="App_Start\SwaggerConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Constraints\ParameterConstraintTemplate.cs" />
@@ -100,6 +101,7 @@
     <Compile Include="Controllers\MoreValuesController.cs" />
     <Compile Include="Controllers\OrdersController.cs" />
     <Compile Include="Controllers\ProductsController.cs" />
+    <Compile Include="Controllers\ReturnTypesController.cs" />
     <Compile Include="Controllers\ValuesController.cs" />
     <Compile Include="EnumerationConstraint.cs" />
     <Compile Include="ExceptionHandlers\ExceptionFilterTemplate.cs" />
