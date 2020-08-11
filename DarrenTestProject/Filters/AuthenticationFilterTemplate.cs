@@ -28,6 +28,7 @@ namespace HandlerTemplates.Filters
         /// Set to the Authorization header Scheme value that this filter is intended to support
         /// </summary>
         public const string SupportedTokenScheme = "MyCustomToken";
+        //public const string SupportedTokenScheme = "bearer";
 
         // TODO: Decide if your filter should allow multiple instances per controller or
         //       per-method; set AllowMultiple to true if so

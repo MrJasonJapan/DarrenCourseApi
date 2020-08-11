@@ -14,6 +14,9 @@ namespace DarrenTestProject
     {
         public static void Register(HttpConfiguration config)
         {
+            // see AuthenticationFilterTemplate for notes about this setting
+            config.SuppressHostPrincipal();
+
             // Web API configuration and services
             // register our Delegating Handlers
             config.MessageHandlers.Add(new FullPipelineTimerHandler());
