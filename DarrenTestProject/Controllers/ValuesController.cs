@@ -18,6 +18,8 @@ namespace DarrenTestProject.Controllers
         // GET: api/Values
         [HttpGet, Route("")]
         //[Authorize] // -> was a proper IPrincipal set?
+        [OverrideAuthentication]
+        [JwtAuthenticationFilter]
         public IEnumerable<string> Get()
         {
             //var getValueByIdUrl = Url.Link("GetValueById", new { id = 123 });
