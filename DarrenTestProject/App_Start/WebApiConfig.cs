@@ -27,9 +27,9 @@ namespace DarrenTestProject
             config.MessageHandlers.Add(new MethodOverrideWithViewHandler());
             config.MessageHandlers.Add(new ForwardedHeadersHandler());
 
-            // config.Filters.Add(new BasicAuthFilterAttribute());
-            // config.Filters.Add(new JwtAuthenticationFilterAttribute());
-            // config.Filters.Add(new AuthorizeAttribute());
+            //config.Filters.Add(new BasicAuthFilterAttribute());
+            config.Filters.Add(new JwtAuthenticationFilterAttribute());
+            config.Filters.Add(new AuthorizeAttribute());
 
             config.MessageHandlers.Add(new ClientIpAddressHandler());
 
